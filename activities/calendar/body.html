@@ -1,0 +1,102 @@
+<div class="db1">
+    <div class="notes">
+        <p class="return"><img src="/community/img/Bounced.png" alt="Bounced"></p>
+        <h3 class="notes-h3">Leave a Note</h3>
+        <form id="rsvp_notes_form" method="post">
+            <textarea name="notes" cols="30" rows="10" required placeholder="Max. 250 characters" maxlength="250"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+<!-- header -->
+<div class="header"></div>
+<!-- main body -->
+<div class="main">
+    <div class="main-top">
+        <div class="w1200 pr">
+            <script id="breadcrumbs" type="txt/template">
+                <div class="main-breadcrumb">
+                        <ul class="breadcrumb">
+                            <li><a href="{{_metadata.root_url}}/home">Home</a></li>
+                            <li>&nbsp;>&nbsp;</li>
+                            <li><a href="{{_metadata.root_url}}/activities">Activities</a></li>
+                            <li>&nbsp;>&nbsp;</li>
+                            <li><a href="#">Events Calendar</a></li>
+                        </ul>
+                    </div>
+                </script>
+            <div class="action-buttons-top">
+                <script id="action_buttons_template" type="txt/template">
+                    {{#action_buttons}}
+                    <span><a href="{{link}}">{{action}}</a></span>
+                    {{/action_buttons}}
+                </script>
+            </div>
+            <div class="main-left">
+                <div class="main-right-content">
+                    <div id="myId" class="jalendar">
+                        <div id="calendar_cycle">
+                            <script id="calendar_left" type="txt/template">
+                                <div
+                                    class="added-event"
+                                    data-name="{{creator}}"
+                                    data-date="{{date}}"
+                                    data-time="{{time}}"
+                                    data-title="{{title}}"
+                                    data-content="{{abbreviated_description}}"
+                                    data-place="Location: {{location}}">
+                                </div>
+                                </script>
+                        </div>
+                    </div>
+                    <div class="calendar-right-FF">
+                        <div id="calendar_events" class="calendar-right">
+                            <script id="event_template" type="txt/template">
+                                <ul class="event-row" data-event-id="{{id}}" data-event-type="{{event_type}}">
+                                <div class="top-right">
+                                    {{#edit_link}}
+                                    <span class="right-a" data-link="{{edit_link}}">Edit</span>
+                                    {{/edit_link}}
+                                    {{#delete_link}}
+                                    <span class="right-b" data-link="{{delete_link}}">Delete</span>
+                                    {{/delete_link}}
+                                </div>
+                                <li>{{friendly_date}}</li>
+                                <li>{{title}}</li>
+                                <li>Location:&nbsp;{{location}}</li>
+                                <li>
+                                    Event Added By:&nbsp;{{creator}}
+                                </li>
+                                {{#rsvp_status}}
+                                <li>
+                                    Your RSVP: {{rsvp_status}}
+                                </li>
+                                {{/rsvp_status}}
+                                {{#rsvp_note}}
+                                <li>
+                                    Your RSVP note: {{rsvp_note}}
+                                </li>
+                                {{/rsvp_note}}
+                                <li class="tips" style="display: none;">
+                                    <ul>
+                                        <li><a class="rsvp-yes">Yes</a></li>
+                                        <li><a class="rsvp-no">No</a></li>
+                                        <li><a class="rsvp-maybe">Maybe</a></li>
+                                        <li><a class="rsvp-notes">Notes</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<div class="footer">
+    <p>
+        Copyright © 2019 Tellus, Inc. All Rights Reserved.
+    </p>
+</div>

@@ -1,0 +1,30 @@
+@import url("css/animate.css");
+@import url("css/reset.css");
+@import url("css/public.css");
+@import url("css/masterslider.main.css");
+@import url("css/ms-skin-sample.css");
+@import url("css/calendar_plugin.css");
+@import url("css/normalize.css");
+html * {
+    /* font-size: 1em !important;
+    color: #000 !important; */
+    font-family: OpenSans-Regular /* !important */;
+}
+
+.alert {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.alert-notice{
+    color: green;
+}
+
+.alert-alert{
+    color: yellow;
+}
+
+.alert-error{
+    color: red;
+}

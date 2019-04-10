@@ -1,0 +1,74 @@
+<!-- header -->
+<div class="header">
+
+</div>
+
+<!-- main body -->
+<div class="main">
+    <script id="breadcrumbs" type="txt/template">
+        <div class="main-breadcrumb">
+        <ul class="breadcrumb" style="float: left">
+            <li><a href="{{_metadata.root_url}}/home">Home</a></li>
+            <li>&nbsp;>&nbsp;</li>
+            <li><a href="{{_metadata.root_url}}/news">News</a></li>
+            <li>&nbsp;>&nbsp;</li>
+            <li><a href="#">Announcements</a></li>
+        </ul>
+    </div>
+</script>
+    <div class="main-center">
+        <h4>Our Community Announcements</h4>
+
+        <div class="content-1">
+            <p>Please check here for the latest important De Anza Oaks community announcements.</p>
+            <div class="choose">
+                <div class="choose-right">
+                    <div class="announcements_add" id="add_cycle">
+                        <script id="add" type="txt/template">
+                            {{#action_buttons}}
+                                <a href="{{_metadata.root_url}}{{_metadata.page_path}}/add">Add</a>
+                            {{/action_buttons}}
+                        </script>
+                    </div>
+                    <ul id="news_announcements" class="tab1 item show">
+                        <script id="announcements_template" type="txt/template">
+                            <li class="announcement-row">
+                                <a href="{{_metadata.root_url}}{{link}}">
+                                    <div>
+                                        <h5 class="title_name" data-link="{{_metadata.root_url}}{{link}}">
+                                            {{title}}
+                                        </h5>
+                                        {{#friendly_date}}
+                                        <div class="friendly">{{friendly_date}}</div>
+                                        {{/friendly_date}}
+                                        {{^friendly_date}}
+                                        <div>(draft)</div>
+                                        {{/friendly_date}}
+                                        <div style="white-space: pre-wrap;" class="abbreviated"><p class="abbreviated_body_p">{{abbreviated_body}}</p></div>
+                                    </div>
+                                </a>
+                                <div class="announcements_permission">
+                                    {{#edit_link}}
+                                    <span><a href="{{_metadata.root_url}}{{edit_link}}">Edit</a></span>
+                                    {{/edit_link}}
+                                    {{#delete_link}}
+                                    <span class="del" data-action="{{delete_link}}">Delete</span>
+                                    {{/delete_link}}
+                                </div>
+                            </li>
+                        </script>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- footer -->
+<div class="footer">
+    <p>
+        Copyright © 2019 Tellus, Inc. All Rights Reserved.
+    </p>
+</div>

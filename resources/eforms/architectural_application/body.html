@@ -1,0 +1,95 @@
+<!-- header -->
+<div class="header">
+
+</div>
+
+<!-- main body -->
+<div class="investor clearfix">
+    <div class="w1200">
+        <script id="breadcrumbs" type="txt/template">
+            <div class="main-breadcrumb">
+                            <ul class="breadcrumb">
+                                <li><a href="{{_metadata.root_url}}/home">Home</a></li>
+                                <li>&nbsp;>&nbsp;</li>
+                                <li><a href="{{_metadata.root_url}}/resources">Resources</a></li>
+                                <li>&nbsp;>&nbsp;</li>
+                                <li><a href="{{_metadata.root_url}}/resources/eforms" rel="noopener noreferrer"> eForms</a></li>
+                                <li>&nbsp;>&nbsp;</li>
+                                <li><a href="#">Architectural Application</a></li>
+                            </ul>
+                        </div>
+                        </script>
+        <table class="eformtable std-table" id="eform20">
+            <tbody>
+                <tr>
+                    <td class="eformheader" colspan="2" id="page_title_cycle">
+                        Architectural Application
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div id="eform_content">
+                            <script id="article_title" type="txt/template">
+                                {{#paragraphs}}
+                                    <p class="paragraph">
+                                        {{.}}
+                                    </p>
+                                {{/paragraphs}}
+                        </script>
+                        </div>
+                    </td>
+                </tr>
+                <form action="post">
+                    <input type="hidden" name="rich_format" value="True">
+                    <tr>
+                        <td>Name:</td>
+                        <td><input type="text" value="" name="f105" size="30" maxlength="250">*</td>
+                    </tr>
+                    <tr>
+                        <td>Street Address:</td>
+                        <td><input type="text" value="" name="f106" size="30" maxlength="250">*</td>
+                    </tr>
+                    <tr>
+                        <td>Lot #:</td>
+                        <td><input type="text" value="" name="f107" size="30" maxlength="250">*</td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number:</td>
+                        <td><input type="text" value="" name="f108" size="30" maxlength="250"></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile Number:</td>
+                        <td><input type="text" value="" name="f109" size="30" maxlength="250"></td>
+                    </tr>
+                    <tr>
+                        <td>Email Address:</td>
+                        <td><input type="text" value="" name="f110" size="30" maxlength="250">*</td>
+                    </tr>
+                    <tr>
+                        <td>General Description of Proposed Work:</td>
+                        <td><textarea wrap="virtual" name="f112" cols="50" rows="5"></textarea>*</td>
+                    </tr>
+                    <tr>
+                        <td>Sketches, Drawings, Plans:</td>
+                        <td><input type="FILE" name="f114" size="30" maxlength="200"></td>
+                    </tr>
+                    <tr>
+                        <td>By checking this box, I agree to the above conditions:</td>
+                        <td><input type="checkbox" name="f111">*</td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+        <p class="p-input">
+            <input type="submit" name="action" value="Submit" class="continue">
+            <input type="button" id="cancel-button" value="Cancel" class="cancel">
+        </p>
+    </div>
+</div>
+
+<!-- footer -->
+<div class="footer">
+    <p>
+        Copyright © 2019 Tellus, Inc. All Rights Reserved.
+    </p>
+</div>

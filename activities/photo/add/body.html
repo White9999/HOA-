@@ -1,0 +1,102 @@
+<!-- header -->
+<div class="header"></div>
+
+<!-- main body -->
+<div class="main_body">
+    <div class="w1200">
+        <script id="breadcrumbs" type="txt/'template'">
+            <ul class="breadcrumb">
+            <li><a href="{{_metadata.root_url}}/home" rel="noopener noreferrer">Home</a></li>
+            <li>&nbsp;>&nbsp;</li>
+            <li><a href="{{_metadata.root_url}}/activities" rel="noopener noreferrer"> Events </a></li>
+            <li>&nbsp;>&nbsp;</li>
+            <li><a href="{{_metadata.root_url}}/activities/photo" rel="noopener noreferrer"> Albums </a></li>
+            <li>&nbsp;>&nbsp;</li>
+            <li><a href="#">Add New Album</a></li>
+        </ul>
+       </script>
+        <div id="content">
+            <div class="main-center">
+                <table class="std-table" border="0" width="90%" bgcolor="#6AA666">
+                    <tr>
+                        <td class="tda">
+                            <font size="5" face="Verdana, Arial, Helvetica" color="#ffffff">
+                                Add a New Photo Album
+                            </font>
+                        </td>
+                        .
+                    </tr>
+                </table>
+                <form method="post" enctype="multipart/form-data">
+                    <table class="addalbum-table" width="90%" border="1" cellpadding="3" cellspacing="0" bordercolor="#6AA666">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Album Name (required)
+                                </td>
+                                <td>
+
+                                    <input type="text" size="28" maxlength="28" name="name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Album Description:
+                                </td>
+                                <td>
+
+                                    <textarea class="inta" cols="36" rows="6" name="description"></textarea>
+                                </td>
+                            </tr>
+
+                            <!--<tr>-->
+                            <!--<td>-->
+                            <!--Comments Allowed:-->
+                            <!--</td>-->
+                            <!--<td class="check-input">-->
+                            <!--<input id="color-input-green_a" type="checkbox" name="color-input-green_a" checked="checked">-->
+                            <!--<label for="color-input-green_a"></label>-->
+                            <!--</td>-->
+                            <!--</tr>-->
+
+
+                            <tr>
+                                <td>
+                                    Main Picture (required):
+                                </td>
+                                <td>
+                                    <input type="file" maxlength="200" name="photo[attachment]" accept="image/gif, image/jpeg, image/jpg, image/png" >
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Caption for Main Picture:
+                                </td>
+                                <td>
+                                    <input type="text" size="50" maxlength="255" name="photo[title]">
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <table border="0" width="90%">
+                        <tbody>
+                            <tr>
+                                <td width="10%" align="right">
+                                    <input type="Submit" value="Save New" name="action" class="continue">
+                                    <input type="button" id="cancel-button" value="Cancel" class="cancel">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<div class="footer">
+    <p>
+        Copyright © 2019 Tellus, Inc. All Rights Reserved.
+    </p>
+</div>

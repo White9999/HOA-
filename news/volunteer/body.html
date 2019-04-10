@@ -1,0 +1,86 @@
+<!-- header -->
+<div class="header">
+</div>
+<!-- main -->
+<div class="main">
+    <div class="main-top">
+        <div class="w1200 pr">
+            <script id="breadcrumbs" type="txt/template">
+                <ul class="breadcrumb">
+                <li><a href="{{_metadata.root_url}}/home" rel="noopener noreferrer">Home</a></li>
+                <li>&nbsp;>&nbsp;</li>
+                <li><a href="{{_metadata.root_url}}/news" rel="noopener noreferrer">News</a></li>
+                <li>&nbsp;>&nbsp;</li>
+                <li><a href="#">Volunteer Needs</a></li>
+            </ul>
+        </script>
+            <div class="main-left-one">
+                <div id="main_volunteer">
+                    <script id="volunteer_title" type="txt/template">
+                        <h3>{{title}}</h3>
+                        <div class="Volunteer_dec">{{description}}</div>
+
+                    </script>
+                    <script id="add_links" type="txt/template">
+                        <div style="width: 100%;margin-bottom: 16px"><a class="top-Add" href="{{_metadata.root_url}}{{_metadata.page_path}}/add">Add</a> </div>
+                    </script>
+                </div>
+                <div class="tiles">
+                    <script id="volunteer_tiles" type="txt/template">
+                        {{#volunteering_events}}
+                        <div class="item">
+                            <a href="{{_metadata.root_url}}{{_metadata.page_path}}/show?volunteering_event_id={{id}}">
+                                <div class="volunteer_title">
+                                    {{title}}
+                                </div>
+                                {{#body}}
+                                <div class="volunteer_body">
+                                    <h4>Description:</h4>
+                                    <div style="white-space: pre-wrap;">{{body}}</div>
+                                </div>
+                                {{/body}}
+                                {{#description}}
+                                <div class="volunteer_description">
+                                    <h4>Description:</h4>
+                                    <div>{{description}}</div>
+                                </div>
+                                {{/description}}
+                                {{#when}}
+                                <div class="volunteer_details">
+                                    <h4>When:</h4>
+                                    <div>{{when}}</div>
+                                </div>
+                                {{/when}}
+                                {{#where}}
+                                <div class="volunteer_details">
+                                    <h4>Where:</h4>
+                                    <div>{{where}}</div>
+                                </div>
+                                {{/where}}
+                                {{#contact}}
+                                <div class="volunteer_contact">
+                                    <h4>Contact:</h4>
+                                    <div>{{contact}}</div>
+                                </div>
+                                {{/contact}}
+                            </a>
+                            <div class="volunteer_admin_options">
+                                <div class="part-a">
+                                    <a class="part-a1" href="{{edit_link}}">Edit</a>
+                                    <a class="part-a2" data-link="{{delete_link}}">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                        {{/volunteering_events}}
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<div class="footer">
+    <p>
+        Copyright © 2019 Tellus, Inc. All Rights Reserved.
+    </p>
+</div>

@@ -1,0 +1,85 @@
+<!-- header -->
+<div class="header"></div>
+
+<!-- main -->
+<div class="investor clearfix">
+    <script id="breadcrumbs" type="txt/template">
+        <div class="main-breadcrumb" style="width: 1200px;margin: 0 auto;">
+            <ul class="breadcrumb">
+                <li><a href="{{_metadata.root_url}}/home">Home</a></li>
+                <li>&nbsp;>&nbsp;</li>
+                <li><a href="#">Invite New Member</a></li>
+            </ul>
+        </div>
+    </script>
+
+    <div class="w1200">
+        <table class="table-one" bborder="0" cellpadding="10" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td>
+                        <table class="table-two">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <script id="header" type="txt/template">
+                                            <font size="4" face="Verdana, Arial, Helvetica" color="#F1F1F1">
+                                                Invite New Member
+                                            </font>
+                                        </script>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <form method="post">
+                            <script id="form" type="txt/template">
+                                <input type="hidden" name="topsapi_old_address_compare_val" value="" align="center">
+                                <center>
+                                    <table class="profile-table" border="1"  cellspacing="0" >
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    First Name:
+                                                </td>
+                                                <td>
+                                                    <input required type="text" name="first_name" size="18" maxlength="18" style="font-family: Tahoma; font-size: 11px">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Last Name:
+                                                </td>
+                                                <td>
+                                                    <input required type="text" name="last_name" size="18" maxlength="18" style="font-family: Tahoma; font-size: 11px">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Email:
+                                                </td>
+                                                <td>
+                                                    <input required type="email" name="email" style="font-family: Tahoma; font-size: 11px">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </center>
+                                <input type="hidden" name="id" value="335">
+                                <p class="p-input">
+                                    <input type="submit" name="action" value="Submit">
+                                    <input type="button" id="cancel-button" value="Cancel">
+                                </p>
+                            </script>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- footer -->
+<div class="footer">
+    <p>
+        Copyright © 2019 Tellus, Inc. All Rights Reserved.
+    </p>
+</div>

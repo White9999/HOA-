@@ -1,0 +1,57 @@
+<!-- header -->
+<div class="header"></div>
+
+
+<!-- main body -->
+<div class="main">
+    <script id="breadcrumbs" type="txt/template">
+        <div class="main-breadcrumb">
+            <ul class="breadcrumb">
+                <li><a href="{{_metadata.root_url}}/home">Home</a></li>
+                <li>&nbsp;>&nbsp;</li>
+                <li><a href="{{_metadata.root_url}}/activities">Events</a></li>
+                <li>&nbsp;>&nbsp;</li>
+                <li><a href="{{_metadata.root_url}}/activities/photo">Albums </a></li>
+                <li>&nbsp;>&nbsp;</li>
+                <li><a href="#?id={{album.id}}">{{album.title}}</a></li>
+            </ul>
+        </div>
+    </script>
+
+    <div class="main-center">
+        <script id="album" type="txt/template">
+            <p class="photo-albums">{{album.title}}</p>
+            {{#album.desc}}
+            <p class="photo-albums">{{album.desc}}</p>
+            {{/album.desc}}
+        </script>
+
+        <div id="admin_permissions_cycle">
+            <script id="upload_photo_links" type="txt/template">
+                <div class="admin_option_left"><a href="{{_metadata.root_url}}{{_metadata.page_path}}/add?album_id={{album.id}}">Add a New Photo</a></div>
+            </script>
+        </div>
+
+        <div class="content-1" id="photo_cycle">
+            <script id="photos" type="txt/template">
+                {{#photos}}
+                    <div class="Events-Calendar">
+                        <div class="content-img" style="background-image: url('{{img}}');"></div>
+                        <div class="content-div">
+                            {{#title}}
+                                <p class="description">{{title}}</p>
+                            {{/title}}
+                            <!--TODO: Style delete button-->
+                            <a data-id="{{id}}" class="delete-button">Delete</a>
+                        </div>
+                    </div>
+                {{/photos}}
+            </script>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+        <p>
+            Copyright © 2019 Tellus, Inc. All Rights Reserved.
+        </p>
+    </div>

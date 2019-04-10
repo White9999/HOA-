@@ -1,0 +1,94 @@
+<!-- header -->
+<div class="header">
+</div>
+
+<!-- main -->
+<div class="main">
+    <div class="w1200">
+            <script id="breadcrumbs" type="txt/template">
+            <ul class="breadcrumb">
+            <li><a href="{{_metadata.root_url}}/home">Home</a></li>
+            <li><span rel="noopener noreferrer" style="color:rgba(30,130,23,1)"> > </span></li>
+            <li><a href="{{_metadata.root_url}}/news">News</a></li>
+            <li><span rel="noopener noreferrer" style="color:rgba(30,130,23,1)"> > </span></li>
+            <li><a href="{{_metadata.root_url}}/news/announcements">Announcements</a></li>
+            <li><span rel="noopener noreferrer" style="color:rgba(30,130,23,1)"> > </span></li>
+            <li><a href="#">Edit Announcement</a></li>
+        </ul>
+          </script>
+        <table class="table-one" border="0" cellpadding="10" cellspacing="0">
+            <table class="table-two" border="0">
+                <tr>
+                    <td>
+                        Edit Announcement
+                    </td>
+                </tr>
+            </table>
+            <form id="edit-announcement-form" method="post" enctype="multipart/form-data">
+                <table class="announcement-table" border="1" cellspacing="0">
+                    <tbody>
+                        <script id="edit-announcement-body" type="txt/template">
+                        <tr>
+                            <td>
+                                Title
+                            </td>
+                            <td>
+                                <input class="int" type="text" name="title" size="10" maxlength="255" required value="{{title}}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Description
+                            </td>
+                            <td>
+                                <textarea wrap="virtual" name="description" required cols="50" rows="5" >{{body}}</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Header Image
+                            </td>
+                            <td>
+                                <input type="file" name="photo" accept="image/*"/>
+                                {{#photo_url}}
+                                <div style="display: inline-block;">
+                                    <a style="color: rgba(30, 130, 23, 1);" href="{{photo_url}}" target="_blank">see currently attached image</a>
+                                </div>
+                                {{/photo_url}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Publish
+                            </td>
+                            <td>
+                                <input class="styled-checkbox" type="checkbox" name="publish" {{#date}}checked{{/date}}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Send Notifications When Publishing
+                            </td>
+                            <td>
+                                <input class="styled-checkbox" type="checkbox" name="send_notifications" {{#send_notifications}}checked{{/send_notifications}}/>
+                            </td>
+                        </tr>
+                        </script>
+                    </tbody>
+                </table>
+                <p class="p-input">
+                    <input type="submit" value="Save">
+                    <input type="button" id="cancel-button" value="Cancel">
+                </p>
+            </form>
+        </table>
+    </div>
+</div>
+
+
+<!-- footer -->
+<div class="footer">
+    <p>
+        Copyright © 2019 Tellus, Inc. All Rights Reserved.
+    </p>
+</div>

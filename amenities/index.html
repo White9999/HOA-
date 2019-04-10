@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>De Anza Oaks</title>
+    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+
+    <!-- Links as currently hosted by http-server -->
+
+    <script src="/js/99_global.js"></script>
+</head>
+
+<body>
+    <div id="content"></div>
+
+    <script>
+        var data = {
+            _current_user: {
+                id: '1234',
+                email: 'test@example.com',
+                display_name: 'Laurie01',
+                first_name: 'Laurie',
+                last_name: 'Williams',
+                is_admin: true
+            },
+            _metadata: {
+                root_url: 'http://127.0.0.1:8080',
+                page_path: '/home',
+                assets_path: '/home',
+                site_name: 'De Anza Oaks',
+                environment: 'dev',
+            },
+            sections: [{
+                text: {
+                    content: [
+                        'The residents of De Anza Oaks enjoy a variety of amenities. Here are some of the reasons we love living in our community:'
+                    ]
+                }
+            }, {
+                title: {
+                    content: 'Gated Community'
+                }
+            }, {
+                image: {
+                    url: '/community/img/park.png'
+                }
+            }, {
+                text: {
+                    content: [
+                        '• Residents live in a gated community and every home has an entry code at the gate.',
+                        '• The front gate provides our residents and children with a safe environment with no solicitors.'
+                    ]
+                }
+            }, {
+                title: {
+                    content: 'Junior Olympic Pool'
+                }
+            }, {
+                image: {
+                    url: '/community/img/JuniorOlympicPool.png'
+                }
+            }, {
+                text: {
+                    content: [
+                        "• De Anza Oaks has a heated 25 yard pool and a heated children's pool available for the enjoyment of the homeowners and their tenants.",
+                        '• Admittance to the pool is with a key card and lot identification tag only.'
+                    ]
+                }
+            }, {
+                title: {
+                    content: 'The Clubhouse'
+                }
+            }, {
+                image: {
+                    url: '/community/img/TheClubhouse.png'
+                }
+            }, {
+                text: {
+                    content: [
+                        '• The clubhouse has a kitchen, formal area, electric fireplace and two bathrooms and deck.',
+                        '• The clubhouse can seat a maximum of 72 people as established by the fire department.'
+                    ]
+                }
+            }, {
+                title: {
+                    content: 'Children’s playground'
+                }
+            }, {
+                image: {
+                    url: '/community/img/Children’splayground.png'
+                }
+            }, {
+                text: {
+                    content: [
+                        '• Children enjoy the outdoor playground year-round. The playground has two slides and monkey bars.'
+                    ]
+                }
+            }, {
+                title: {
+                    content: 'Green Fields'
+                }
+            }, {
+                image: {
+                    url: '/community/img/Green-Fields.png'
+                }
+            }, {
+                text: {
+                    content: [
+                        '• There are two large green fields in the community that are commonly used by residents for sports, exercise, fun, and events. Kids often use the fields for football, frisbee and other forms of play.',
+                        '• Many residents will walk their pets along the community’s many walking paths.'
+                    ]
+                }
+            }]
+        }
+
+    </script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+        // This script block stays in this wrapper html file
+        $(function() {
+            $('#content').load("body.html", function() {
+                render();
+            });
+        });
+
+    </script>
+</body>
+
+</html>

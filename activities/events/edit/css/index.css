@@ -1,0 +1,105 @@
+.breadcrumb {
+  width: 100%;
+  height: 75px;
+}
+
+.breadcrumb li {
+  float: left;
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 75px;
+  color: rgba(30, 130, 23, 1);
+}
+
+.breadcrumb li a {
+  color: rgba(30, 130, 23, 1);
+}
+
+.table-td {
+  height: 64px;
+  padding-left: 24px;
+}
+
+.event-table {
+  width: 90%;
+  border: solid 1px #6AA666;
+}
+
+.event-table tr {
+  width: 410px;
+  height: 54px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(106, 166, 102, 1);
+}
+
+.event-table tr td {
+  height: 24px;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(57, 61, 68, 1);
+  line-height: 24px;
+  text-align: left;
+  border-color: "#f1e8c6";
+  padding: 14px 24px;
+}
+
+.event-table tr td input {
+  width: 180px;
+  height: 28px;
+}
+
+.event-table tr td select {
+  font-family: Tahoma;
+  font-size: 11
+}
+
+.int {
+  width: 564px !important;
+  height: 28px;
+}
+
+.inta {
+  width: 564px !important;
+  height: 28px;
+}
+
+.intb {
+  width: 564px !important;
+  height: 160px;
+}
+
+.p-input {
+  width: 90%;
+  margin: 20px 0;
+  text-align: right;
+
+}
+
+.p-input input:nth-child(1) {
+  width: 113px;
+  height: 38px;
+  background: rgba(106, 166, 102, 1);
+  border-radius: 19px;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 22px;
+  cursor: pointer;
+
+}
+
+.p-input input:nth-child(2) {
+  width: 113px;
+  height: 38px;
+  background: rgba(249, 75, 90, 1);
+  border-radius: 19px;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 22px;
+  margin-left: 20px;
+  cursor: pointer;
+}

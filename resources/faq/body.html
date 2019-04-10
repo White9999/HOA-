@@ -1,0 +1,50 @@
+<!-- header -->
+<div class="header"></div>
+<!-- main body -->
+<div class="main">
+    <div class="main-top clearfix">
+        <div class="w1200 pr">
+            <script id="breadcrumbs" type="txt/template">
+                <div class="main-breadcrumb">
+                            <ul class="breadcrumb">
+                                <li><a href="{{_metadata.root_url}}/home">Home</a></li>
+                                <li>&nbsp;>&nbsp;</li>
+                                <li><a href="{{_metadata.root_url}}/resources"> Resources </a></li>
+                                <li>&nbsp;>&nbsp;</li>
+                                <li><a href="#">FAQ's</a></li>
+                            </ul>
+                        </div>
+                        </script>
+            <div class="main-left">
+                <div class="form_2">
+                    <div class="form_title">
+                        <div class="form_title" id="faq_title_cycle">
+                            Frequently Asked Questions
+                        </div>
+                    </div>
+                    <div id="faq_cycle" class="faq_cycle">
+                        <script id="faq" type="txt/template">
+                        <div class="faq_title">{{category_name}}</div>
+                        <ul class="faq_ul">
+                            <li>
+                                {{#faqs}}
+                                <h3>Question: {{question}}</h3>
+                                <p class="faq_p"><strong>Answer:</strong> {{answer}}</p>
+                                {{/faqs}}
+                            </li>
+                        </ul>
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <p>
+            Copyright © 2019 Tellus, Inc. All Rights Reserved.
+        </p>
+    </div>
+    <div class="clearfix"></div>
+</div>

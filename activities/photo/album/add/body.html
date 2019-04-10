@@ -1,0 +1,86 @@
+<!-- header -->
+<div class="header"></div>
+
+<!-- main body -->
+<div class="main_body">
+    <div class="w1200">
+        <script id="breadcrumbs" type="txt/template">
+            <ul class="breadcrumb">
+            <li><a href="{{_metadata.root_url}}/home" rel="noopener noreferrer">Home</a></li>
+            <li>&nbsp;>&nbsp;</li>
+            <li><a href="{{_metadata.root_url}}/activities" rel="noopener noreferrer"> Events </a></li>
+            <li>&nbsp;>&nbsp;</li>
+            <li><a href="{{_metadata.root_url}}/activities/photo/" rel="noopener noreferrer"> Albums </a></li>
+            <li>&nbsp;>&nbsp;</li>
+            <li><a href="{{_metadata.root_url}}/activities/photo/album?album_id={{album.id}}" rel="noopener noreferrer">{{album.title}}</a></li>
+            <li>&nbsp;>&nbsp;</li>
+            <li><a href="#">Add Photo</a></li>
+        </ul>
+    </script>
+        <div id="content">
+            <div class="main-center">
+                <script id="add" type="txt/template">
+                    <table class="table-two" border="0">
+                        <tr>
+                            <td class="tda">
+                                <font size="5" face="Verdana, Arial, Helvetica" color="#ffffff">
+                                    Add Photo To Album
+                                </font>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <form method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="photo[album_id]" value="{{album.id}}">
+
+                        <table class="addalbum-table" width="90%" border="1" cellpadding="3" cellspacing="0"
+                               bordercolor="#6AA666">
+                            <tbody>
+                            <tr>
+                                <td>
+
+                                    Photo Name
+                                </td>
+                                <td>
+
+                                    <input type="text" size="50" maxlength="50" name="photo[title]"
+                                    class="inta">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    Image File:
+                                </td>
+                                <td>
+
+                                    <input type="file" required maxlength="200" name="photo[attachment]">
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                        <table border="0" width="90%">
+                            <tbody>
+                            <tr>
+                                <td width="10%" align="right">
+                                    <input type="Submit" value="Save New" name="action" class="continue">
+                                    <input type="button" id="cancel-button" value="Cancel" class="cancel">
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                    <div class="clearfix"></div>`
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<div class="footer">
+    <p>
+        Copyright © 2019 Tellus, Inc. All Rights Reserved.
+    </p>
+</div>

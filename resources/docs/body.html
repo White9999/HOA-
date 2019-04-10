@@ -1,0 +1,97 @@
+<!-- header -->
+<div class="header">
+</div>
+
+<!-- main body -->
+<div class="investor clearfix">
+    <div class="main-breadcrumb">
+        <div class="main-breadcrumb">
+            <ul class="breadcrumb">
+                <script id="breadcrumbs" type="txt/template">
+                    <li><a href="{{_metadata.root_url}}/home">Home</a></li>
+                    <li>&nbsp;>&nbsp;</li>
+                    <li><a href="{{_metadata.root_url}}/resources">Resources</a></li>
+                    <li>&nbsp;>&nbsp;</li>
+                    <li><a href="{{_metadata.root_url}}/resources/docs">Docs</a></li>
+                </script>
+                <script id="path-breadcrumbs" type="txt/template">
+                    {{#pathBreadcrumbs}}
+                        <li>&nbsp;>&nbsp;</li>
+                        <li><a href="{{link}}">{{directoryName}}</a></li>
+                    {{/pathBreadcrumbs}}
+                </script>
+            </ul>
+        </div>
+    </div>
+    <div class="w1200">
+        <div class="w838">
+            <div class="investor-pdf">
+                <div class="main-center">
+                    <div class="content-1">
+                        <div class="choose">
+                            <div class="choose-right">
+                                <div style="display: flex;">
+                                    <script id="actions_template" type="txt/template">
+                                        {{#action_buttons}}
+                                            <a class="action_buttons" href="{{_metadata.root_url}}{{link}}">{{action}}</a>
+                                        {{/action_buttons}}
+                                    </script>
+                                </div>
+                                <ul id="documents" class="item show">
+                                    <script id="documents_template" type="txt/template">
+                                        {{#sub_directories}}
+                                            <li>
+                                                <a href="{{_metadata.root_url}}{{link}}">
+                                                    <div class="investor-pdfhov">
+                                                        <div class="investor-pdf-img">
+                                                            <img src="{{assets_path}}/community/img/directory-icon.png" alt="PDF Preview" class="pdfa">
+                                                        </div>
+                                                    </div>
+                                                    <p>{{name}}-selection</p>
+                                                </a>
+                                            </li>
+                                        {{/sub_directories}}
+                                        {{#documents}}
+                                        <li>
+                                            <div class="investor-pdfhov">
+                                                <div class="investor-pdf-img">
+                                                    {{#img}}
+                                                        <img src="{{img}}" class="pdfa">
+                                                    {{/img}}
+                                                    {{^img}}
+                                                        <img src="{{assets_path}}/community/img/file-icon.png" class="pdfa"/>
+                                                    {{/img}}
+                                                </div>
+                                                <div class="investor-pdf-con">
+                                                    <a href="{{url}}" target="_blank">View</a>
+                                                    {{#deletable}}
+                                                    {{#_current_user.is_admin}}
+                                                    <a data-id="{{id}}" class="delete-link">Delete</a>
+                                                    {{/_current_user.is_admin}}
+                                                    {{/deletable}}
+                                                </div>
+                                            </div>
+                                            <p>{{title}}</p>
+                                            {{#user_friendly_date}}
+                                            <p>{{user_friendly_date}}</p>
+                                            {{/user_friendly_date}}
+                                        </li>
+                                        {{/documents}}
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<div class="footer">
+    <p>
+        Copyright © 2019 Tellus, Inc. All Rights Reserved.
+    </p>
+</div>

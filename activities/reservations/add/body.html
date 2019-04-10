@@ -1,0 +1,182 @@
+<!-- header -->
+<div class="header"></div>
+
+<!-- main -->
+<div class="main_body">
+
+    <div class="w1200">
+        <script id="breadcrumbs" type="txt/template">
+            <ul class="breadcrumb">
+            <li><a href="{{_metadata.root_url}}/home">Home</a></li>
+            <li><span rel="noopener noreferrer"> > </span></li>
+            <li><a href="{{_metadata.root_url}}/activities">Activities</a></li>
+            <li><span rel="noopener noreferrer"> > </span></li>
+            <li><a href="{{_metadata.root_url}}/activities/calendar">Events</a></li>
+            <li><span rel="noopener noreferrer"> > </span></li>
+            <li><a href="#">Create Reservation Request</a></li>
+        </ul>
+    </script>
+        <table class="table_a" cellpadding="10" cellspacing="0">
+            <table class="table-two">
+                <tr>
+                    <td class="tda">
+                        Create Reservation Request
+                    </td>
+                </tr>
+            </table>
+            <script id="image_template" type="txt/template">
+            <img class="form-header-image" src="{{img_url}}"/>
+            </script>
+            <form id="add-reservation-form" method="post" enctype="multipart/form-data">
+                <table class="reservation-table" border="1" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                Location
+                            </td>
+                            <td>
+                                <script id="location_template" type="txt/template">
+                                <span>{{name}}</span>
+                                <input type="hidden" name="amenity_id" value="{{id}}"/>
+                                </script>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Rules</td>
+                            <td>
+                                <script id="rules_template" type="txt/template">
+                                <span style="white-space: pre-wrap;">{{rules}}</span>
+                                </script>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Event Start Date (mm/dd/yyyy):
+                            </td>
+                            <td><input type="text" name="start_date" size="10" maxlength="10" required></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Event End Date (mm/dd/yyyy):
+                            </td>
+                            <td width="70%">
+                                <input type="text" name="end_date" size="10" maxlength="10">
+                                <span>(use only for events that span across multiple consecutive days)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Event Start Time:
+                            </td>
+                            <td>
+                                <select size="1" name="start_time_hour" required>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>:
+                                <select size="1" name="start_time_minute" required>
+                                    <option value="00">00</option>
+                                    <option value="05">05</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="35">35</option>
+                                    <option value="40">40</option>
+                                    <option value="45">45</option>
+                                    <option value="50">50</option>
+                                    <option value="55">55</option>
+                                </select>&nbsp;
+                                <select size="1" name="start_time_period" required>
+                                    <option value="AM">AM</option>
+                                    <option value="PM">PM</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Event End Time:
+                            </td>
+                            <td>
+                                <select size="1" name="end_time_hour" required>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>:
+                                <select size="1" name="end_time_minute" required>
+                                    <option value="00">00</option>
+                                    <option value="05">05</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="35">35</option>
+                                    <option value="40">40</option>
+                                    <option value="45">45</option>
+                                    <option value="50">50</option>
+                                    <option value="55">55</option>
+                                </select>&nbsp;
+                                <select size="1" name="end_time_period" required>
+                                    <option value="AM">AM</option>
+                                    <option value="PM">PM</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <script id="reservation_fields_template" type="txt/template">
+                        {{#text_fields}}
+                        <tr>
+                            <td>{{user_friendly_name}}:</td>
+                            <td>
+                                <input class="intb" type="text" name="fields[{{key}}]" size="10" maxlength="255">
+                            </td>
+                        </tr>
+                        {{/text_fields}}
+
+                        {{#boolean_fields}}
+                        <tr>
+                            <td>{{user_friendly_name}}:</td>
+                            <td>
+                                <input type="hidden" name="fields[{{key}}]" value="false">
+                                <input type="checkbox" name="fields[{{key}}]" value="true">
+                            </td>
+                        </tr>
+                        {{/boolean_fields}}
+                        </script>
+                    </tbody>
+                </table>
+                <p class="p-input">
+                    <input type="submit" value="Save">
+                    <input type="button" id="cancel-button" value="Cancel">
+                </p>
+            </form>
+        </table>
+    </div>
+</div>
+
+
+<!-- footer -->
+<div class="footer">
+    <p>
+        Copyright © 2019 Tellus, Inc. All Rights Reserved.
+    </p>
+</div>

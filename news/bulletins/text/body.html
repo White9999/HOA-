@@ -1,0 +1,115 @@
+<!-- header -->
+<div class="header">
+</div>
+
+<!-- main -->
+<div class="main">
+
+    <div class="w1200">
+        <script id="breadcrumbs" type="txt/template">
+            <ul class="breadcrumb">
+            <li><a href="{{_metadata.root_url}}/home">Home</a></li>
+            <li><span rel="noopener noreferrer" style="color:rgba(30,130,23,1)"> > </span></li>
+            <li><a href="{{_metadata.root_url}}/news">News</a></li>
+            <li><span rel="noopener noreferrer" style="color:rgba(30,130,23,1)"> > </span></li>
+            <li><a href="{{_metadata.root_url}}/news/bulletins">Email Bulletin</a></li>
+            <li><span rel="noopener noreferrer" style="color:rgba(30,130,23,1)"> > </span></li>
+            <li><a href="#">Send Plain Text</a></li>
+        </ul>
+    </script>
+        <table class="table-two" border="0">
+            <tr>
+                <td>
+
+                    <div id="text_add_title_cycle">
+                        <script id="text_add_title" type="txt/template">
+                            {{name}}
+                                    </script>
+                    </div>
+
+                </td>
+            </tr>
+        </table>
+        <form method="post">
+            <table class="text-table" border="1" cellspacing="0">
+                <tr>
+                    <td>
+                        From Name:
+                    </td>
+                    <td>
+
+                        <input class="int" type="text" size="10" maxlength="10">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        From eMail Address:
+                    </td>
+                    <td><input type="text" size="10" maxlength="10"></td>
+                </tr>
+                <tr>
+                    <td>
+                        To:
+                    </td>
+                    <td>
+                        <select size="1" name="sendTo" id="sendToSelect">
+                            <option selected="" value=" none">(None)</option>
+                            <option value="maillist_category">eMail Bulletin Category</option>
+                            <option value="person_category">Address Book Category</option>
+                            <option value="subdivision">Subdivision</option>
+                            <option value="all">All</option>
+                            <option value="eform">eForm</option>
+                            <option value="survey">Survey</option>
+
+                            <option value="last_login">Last Login Date</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Subject:
+                    </td>
+                    <td>
+                        <input type="text" name="event_start_dt" size="10" maxlength="10">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Linked File:
+                    </td>
+                    <td>
+                        <input type="file" size="30" maxlength="200">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Full Description:
+                    </td>
+                    <td><textarea wrap="virtual" name="full_desc" cols="50" rows="5"></textarea></td>
+                </tr>
+            </table>
+            <p class="p-input">
+
+                <input type="submit" value="Send Email Bulletin">
+                <input type="button" id="cancel-button" value="Cancel">
+
+            </p>
+        </form>
+
+
+        </td>
+        </tr>
+        </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+<!-- footer -->
+<div class="footer">
+    <p>
+        Copyright © 2019 Tellus, Inc. All Rights Reserved.
+    </p>
+</div>

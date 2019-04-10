@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>De Anza Oaks</title>
+    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+
+    <script src="/js/99_global.js"></script>
+</head>
+
+<body>
+    <div id="content"></div>
+    <script>
+        var data = {
+            _current_user: {
+                id: '1234',
+                email: 'test@example.com',
+                display_name: 'Laurie01',
+                first_name: 'Laurie',
+                last_name: 'Williams',
+                is_admin: true
+            },
+            _metadata: {
+                root_url: 'http://127.0.0.1:8080',
+                page_path: '/home',
+                assets_path: '/home',
+                site_name: 'De Anza Oaks',
+                environment: 'dev',
+            },
+            // eforms_type: [{
+            //     id: 1,
+            //     Typename: 'eForms'
+            // }],
+            eforms_edit_title: [{
+                id: 1,
+                Typename: 'eForms'
+            }],
+            see_table: [{
+                id: 1,
+                Typename: 'View/Export Submitted eForms'
+            }],
+            function_button_name: [{
+                id: 1,
+                name: 'Add',
+                link: './add'
+            }],
+            eforms_edit: [{
+                    id: 1,
+                    title: 'Architectural Application',
+                    link: './architectural_application'
+                },
+                {
+                    id: 2,
+                    title: 'Clubhouse Reservation Request Form',
+                    link: './reserve-the-clubhouse'
+
+                },
+                {
+                    id: 3,
+                    title: 'RSVP for DAO End of Summer Party',
+                    link: './rsvp_summer_party'
+                },
+                {
+                    id: 4,
+                    title: 'RSVP for DAO Holiday Party',
+                    link: './rsvp_summer_party'
+                },
+                {
+                    id: 5,
+                    title: 'RSVP for Easter Brunch',
+                    link: './rsvp_summer_party'
+                }
+            ],
+            view_export_submitted_eforms: [{
+                    id: 1,
+                    title: 'Architectural Application',
+                    link: './application-form',
+                    number: '0',
+                    apply: ''
+                },
+                {
+                    id: 2,
+                    title: 'Clubhouse Reservation Request Form',
+                    link: './application-form',
+                    number: '5',
+                    apply: '5'
+                },
+                {
+                    id: 3,
+                    title: 'RSVP for DAO End of Summer Party',
+                    link: './application-form',
+                    number: '0',
+                    apply: ''
+                },
+                {
+                    id: 4,
+                    title: 'RSVP for DAO Holiday Party',
+                    link: './application-form',
+                    number: '0',
+                    apply: ''
+                },
+                {
+                    id: 5,
+                    title: 'RSVP for Easter Brunch',
+                    link: './application-form',
+                    number: '0',
+                    apply: ''
+                }
+            ]
+        }
+
+    </script>
+
+
+    <script src="js/index.js"></script>
+    <script>
+        // This script block stays in this wrapper html file
+        $(function() {
+            $('#content').load("body.html", function() {
+                render();
+            });
+        });
+
+    </script>
+</body>
+
+</html>

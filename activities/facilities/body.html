@@ -1,0 +1,81 @@
+<!-- header -->
+<div class="header"></div>
+<!-- main body -->
+<div class="main">
+    <script id="breadcrumbs" type="txt/template">
+        <div class="main-breadcrumb">
+                    <ul class="breadcrumb">
+                        <li><a href="{{_metadata.root_url}}/home">Home</a></li>
+                        <li>&nbsp;>&nbsp;</li>
+                        <li><a href="{{_metadata.root_url}}/activities" rel="noopener noreferrer">Activities</a></li>
+                        <li>&nbsp;>&nbsp;</li>
+                        <li><a href="#">Facilities</a></li>
+                    </ul>
+                </div>
+            </script>
+    <div class="main-top clearfix">
+
+        <div class="w1200 pr">
+            <div class="main-left">
+                <h2 id="content_title_cycle">
+                    Facilities
+                </h2>
+
+                <div class="sections">
+                    <script id="sections" type="txt/template">
+                        {{#sections}}
+                            {{#title}}
+                                <div class="section_title">
+                                    {{content}}
+                                </div>
+                            {{/title}}
+
+                            {{#text}}
+                                {{#content}}
+                                    <div class="section_text">
+                                        {{.}}
+                                    </div>
+                                {{/content}}
+                            {{/text}}
+
+                            {{#files}}
+                                <div class="section_files">
+                                    <a target="_blank" href="{{url}}">{{name}}</a>
+                                </div>
+                            {{/files}}
+
+                            {{#images}}
+                                <div class="section_images swiper-container">
+                                    <ul class="swiper-wrapper">
+                                        {{#content}}
+                                            <li class="swiper-slide" style="background: url('{{.}}') no-repeat;"></li>
+                                        {{/content}}
+                                    </ul>
+                                </div>
+                            {{/images}}
+
+                            {{#highlight}}
+                                <div class="section_highlight">
+                                    <h3>{{title}}</h3>
+                                    <ul>
+                                        {{#content}}
+                                            <li>{{.}}</li>
+                                        {{/content}}
+                                    </ul>
+                                </div>
+                            {{/highlight}}
+                        {{/sections}}
+                    </script>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- footer -->
+    <div class="footer">
+        <p>
+            Copyright © 2019 Tellus, Inc. All Rights Reserved.
+        </p>
+    </div>
+    <div class="clearfix"></div>
+</div>

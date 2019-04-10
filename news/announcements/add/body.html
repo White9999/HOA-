@@ -1,0 +1,86 @@
+<!-- header -->
+<div class="header">
+
+</div>
+
+<!-- main -->
+<div class="main">
+    <div class="w1200">
+        <script id="breadcrumbs" type="txt/template">
+            <ul class="breadcrumb">
+            <li><a href="{{_metadata.root_url}}/home">Home</a></li>
+            <li><span rel="noopener noreferrer" style="color:rgba(30,130,23,1)"> > </span></li>
+            <li><a href="{{_metadata.root_url}}/news">News</a></li>
+            <li><span rel="noopener noreferrer" style="color:rgba(30,130,23,1)"> > </span></li>
+            <li><a href="{{_metadata.root_url}}/news/announcements">Announcements</a></li>
+            <li><span rel="noopener noreferrer" style="color:rgba(30,130,23,1)"> > </span></li>
+            <li><a href="#">Add a New Announcement</a></li>
+        </ul>
+       </script>
+        <table class="table-one" border="0" cellpadding="10" cellspacing="0">
+            <table class="table-two" border="0">
+                <tr>
+                    <td>
+                        Add a New Announcement
+                    </td>
+                </tr>
+            </table>
+            <form id="add-announcement-form" method="post" enctype="multipart/form-data">
+                <table class="announcement-table" border="1" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                Title
+                            </td>
+                            <td>
+                                <input class="int" type="text" name="title" size="10" maxlength="255" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Description
+                            </td>
+                            <td>
+                                <textarea wrap="virtual" name="description" required cols="50" rows="5" maxlength="2048"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Header Image
+                            </td>
+                            <td>
+                                <input type="file" name="photo" accept="image/*" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Publish
+                            </td>
+                            <td>
+                                <input class="styled-checkbox" type="checkbox" name="publish" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Send Notifications When Publishing
+                            </td>
+                            <td>
+                                <input class="styled-checkbox" type="checkbox" name="send_notifications" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="p-input">
+                    <input type="submit" value="Save New" class="continue">
+                    <input type="button" id="cancel-button" value="Cancel" class="cancel">
+                </p>
+            </form>
+        </table>
+    </div>
+</div>
+<!-- footer -->
+<div class="footer">
+    <p>
+        Copyright © 2019 Tellus, Inc. All Rights Reserved.
+    </p>
+</div>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>De Anza Oaks</title>
+    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="css/01_jquery.modal.min.css">
+    <link rel="stylesheet" href="css/02_index.css">
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+
+    <script src="/js/99_global.js"></script>
+
+</head>
+
+<body>
+    <div id="content"></div>
+
+    <script>
+        var data = {
+            _current_user: {
+                id: '1234',
+                email: 'test@example.com',
+                display_name: 'Laurie01',
+                first_name: 'Laurie',
+                last_name: 'Williams',
+                is_admin: true
+            },
+            _metadata: {
+                root_url: 'http://127.0.0.1:8080',
+                page_path: '/home',
+                assets_path: '/home',
+                site_name: 'De Anza Oaks',
+                environment: 'dev',
+            },
+            page_title: {
+                id: 1,
+                title: 'Address Book'
+            },
+            names_by_letter: [{
+                    letter: 'A',
+                    names: [{
+                        id: 1,
+                        name: 'Allan, Joan'
+                    }, {
+                        id: 2,
+                        name: 'Angani, Raju & Tekkali, Janaki'
+                    }],
+                },
+                {
+                    letter: 'B',
+                    names: [{
+                        id: 3,
+                        name: 'Baines, Joan & Mike'
+                    }, {
+                        id: 4,
+                        name: 'Berry, Susan'
+                    }],
+                },
+                {
+                    letter: 'C',
+                    names: [{
+                        id: 5,
+                        name: 'Cantley, Nancy'
+                    }, {
+                        id: 6,
+                        name: 'Carlson, Madge Ann'
+                    }],
+                },
+                {
+                    letter: 'L',
+                    names: [{
+                        id: 7,
+                        name: 'Lu, Tom'
+                    }],
+                },
+                {
+                    letter: 'T',
+                    names: [{
+                        id: 8,
+                        name: 'Test, Test'
+                    }],
+                }
+            ],
+            letter_anchors: [{
+                    letter: 'A'
+                },
+                {
+                    letter: 'B'
+                },
+                {
+                    letter: 'C'
+                },
+                {
+                    letter: 'D'
+                },
+                {
+                    letter: 'E'
+                },
+                {
+                    letter: 'F'
+                },
+                {
+                    letter: 'G'
+                },
+                {
+                    letter: 'H'
+                },
+                {
+                    letter: 'I'
+                },
+                {
+                    letter: 'J'
+                },
+                {
+                    letter: 'K'
+                },
+                {
+                    letter: 'L'
+                },
+                {
+                    letter: 'M'
+                },
+                {
+                    letter: 'N'
+                },
+                {
+                    letter: 'O'
+                },
+                {
+                    letter: 'P'
+                },
+                {
+                    letter: 'Q'
+                },
+                {
+                    letter: 'R'
+                },
+                {
+                    letter: 'S'
+                },
+                {
+                    letter: 'T'
+                },
+                {
+                    letter: 'U'
+                },
+                {
+                    letter: 'V'
+                },
+                {
+                    letter: 'W'
+                },
+                {
+                    letter: 'X'
+                },
+                {
+                    letter: 'Y'
+                },
+                {
+                    letter: 'Z'
+                },
+            ],
+            // address_book_categories: [{
+            //     id: 1,
+            //     title: "Address Book Categories",
+            //     list: "All(224)",
+            //     secondlist: "Resident(224)"
+            // }],
+            page_information: [{
+                id: 1,
+                content: 'Here you will find a listing of De Anza Oaks residents who participate in this online version of the Directory.'
+            }],
+            function_button: [{
+                id: 1,
+                content: 'Click here to list by Street Name'
+            }],
+            user_information: [{
+                id: 1,
+                PersonalPhotoUrl: '/community/img/man.jpg',
+                userContent: 'Resident',
+                name: 'Allan, Joan',
+                DateOofBirth: 'Birth date: January 26',
+                Email: 'Email:johnkrischer@gmail.com',
+                Phone: 'Phone:408-550-6114',
+                professional: 'Occupation: Tech Dork',
+                community: 'De Anza Oaks',
+                address: 'Address: ',
+                addressContent: '22806 Poplar Grove Square',
+                content: 'Cupertino CA 95014',
+                unit: 'Lot #/Unit #: 056',
+                children: 'Children:',
+                FirstChild: 'Sabrina - Birth date: 8/27/1998',
+                SecondChild: 'Samantha - Birth date: 1/11/2001',
+                ThirdChild: 'Tyler - Birth date: 6/18/2003',
+                FourthChild: '',
+                FifthChild: '',
+                HereFrom: 'Here From:',
+                HereFromContent: 'Aptos, CA',
+                MoveInDate: 'Move-In Date:',
+                MoveInDateContent: '2005/08/05',
+                Computer: 'Computer Type: ',
+                ComputerType: 'Windows, Apple,Linux',
+                Hobbies: 'Hobbies:',
+                HobbiesList: 'Travel, languages, Classic cars',
+                HobbiesList2: 'anything ocean related ',
+                PersonalWebsite: 'Personal Website:',
+                personalUrl: 'http://www.johnkrischer.com'
+            }],
+            user: [{
+                username: [{
+                        id: 1,
+                        name: 'Allan, Joan'
+                    },
+                    {
+                        id: 2,
+                        name: 'allen, christina'
+                    },
+                    {
+                        id: 3,
+                        name: 'An, Jeonghwan(James)'
+                    },
+                    {
+                        id: 4,
+                        name: 'Anand, Prema'
+                    },
+                    {
+                        id: 5,
+                        name: 'Angne, Shweta'
+                    },
+                    {
+                        id: 6,
+                        name: 'Angani, Raju & Tekkali, Janaki'
+                    },
+                    {
+                        id: 7,
+                        name: 'Arora, Kiran & Patel, Ketan'
+                    },
+                    {
+                        id: 8,
+                        name: 'Arramreddy, Vasudeva & Rohini'
+                    },
+                    {
+                        id: 9,
+                        name: 'Arumugam, Ramabathiran & Ramabathiran, Selvi'
+                    },
+                    {
+                        id: 10,
+                        name: 'Asawa, Vanita'
+                    },
+                    {
+                        id: 11,
+                        name: 'Baines, Joan & Mike'
+                    },
+                    {
+                        id: 12,
+                        name: 'Balachander, Needamangalam'
+                    },
+                    {
+                        id: 13,
+                        name: 'Balijepalli, Priya'
+                    },
+                    {
+                        id: 14,
+                        name: 'Beekley, Karen'
+                    },
+                    {
+                        id: 15,
+                        name: 'berry, susan'
+                    },
+                    {
+                        id: 16,
+                        name: 'Cantley, Nancy'
+                    },
+                    {
+                        id: 17,
+                        name: 'Carlson, Madge Ann'
+                    }
+                ]
+            }],
+            according_to_the_street: [{
+                id: 1,
+                title: 'No Street Name',
+                number: '1'
+            }, {
+                id: 2,
+                title: 'Camberley Lane',
+                number: '19'
+            }, {
+                id: 3,
+                title: 'Cricket Hill Road',
+                number: '43'
+            }, {
+                id: 4,
+                title: 'Firwood Drive',
+                number: '43'
+            }, {
+                id: 5,
+                title: 'Lamplighter Square',
+                number: '18'
+            }, {
+                id: 6,
+                title: 'Longdown Road',
+                number: '46'
+            }, {
+                id: 7,
+                title: 'N/A',
+                number: '1'
+            }, {
+                id: 8,
+                title: 'Poplar Grove Square',
+                number: '15'
+            }, {
+                id: 9,
+                title: 'Potters Hatch Common',
+                number: '15'
+            }, {
+                id: 10,
+                title: 'Ridgeway Drive',
+                number: '20'
+            }, {
+                id: 11,
+                title: 'washington Street',
+                number: '1'
+            }],
+            street_name: [{
+                    letter: 'C',
+                    title: 'Camberely Lane',
+                    names: [{
+                        name: 'Anand Prema'
+                    }, {
+                        name: 'Hayes Andy'
+                    }],
+                },
+                {
+                    letter: 'C',
+                    title: 'Cricket Hill Road',
+                    names: [{
+                        name: 'Beekley Karen '
+                    }, {
+                        name: 'Carlson Madge Ann'
+                    }]
+                },
+                {
+                    letter: 'F',
+                    title: 'Firwood Drive',
+                    names: [{
+                        name: 'Dalal'
+                    }, {
+                        name: 'Saroj&Dixon Paul'
+                    }]
+                },
+                {
+                    letter: 'L',
+                    title: 'Longdown Road',
+                    names: [{
+                            name: 'Deshpande Shilpa'
+                        },
+                        {
+                            name: 'Goswami Angira'
+                        }
+                    ]
+                },
+                {
+                    title: 'Lamplighter Square',
+                    letter: 'L',
+                    names: [{
+                        name: 'Deshpande Shilpa'
+                    }, {
+                        name: 'Goswami Angira'
+                    }]
+                },
+                {
+                    title: 'N/A',
+                    letter: 'N',
+                    names: [{
+                        name: 'McDonald Chris'
+                    }]
+                },
+                {
+                    title: 'Poplar Grove Square',
+                    letter: 'P',
+                    names: [{
+                            name: 'Chan Connie'
+                        },
+                        {
+                            name: 'Kim Soohyung'
+                        }
+                    ]
+                },
+                {
+                    letter: 'P',
+                    title: 'Potters Hatch Common',
+                    names: [{
+                        name: 'Balijepalli Priya'
+                    }, {
+                        name: 'Chew, Margaret'
+                    }]
+                },
+                {
+                    letter: 'R',
+                    title: 'Ridgeway Drive',
+                    names: [{
+                        name: 'Ramachandran Vidhya'
+                    }, {
+                        name: 'Robinson Ted'
+                    }]
+                },
+                {
+                    title: 'Washington Street',
+                    letter: 'W',
+                    names: [{
+                        name: 'Snyder Kaycee'
+                    }, {
+                        name: 'Rivera Daniel'
+                    }]
+                }
+            ]
+        }
+
+    </script>
+
+
+    <script src="js/01_jquery.modal.min.js"></script>
+    <script src="js/02_index.js"></script>
+    <script>
+        // This script block stays in this wrapper html file
+        $(function() {
+            $('#content').load("body.html", function() {
+                render();
+            });
+        });
+
+    </script>
+</body>
+
+</html>

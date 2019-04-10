@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=8" /> -->
+
+    <title>De Anza Oaks</title>
+    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcut icon" href="#" />
+    <!-- <link rel="stylesheet" href="css/jalendar.css"> -->
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+
+    <!-- Links as currently hosted by http-server -->
+    <script src="/js/10_masterslider.min.js"></script>
+    <script src="/js/11_calendar_plugin.js"></script>
+    <script src="/js/99_global.js"></script>
+</head>
+
+<body>
+    <div id="content"></div>
+
+    <script>
+        // This script block stays in this wrapper html file
+        var data = {
+            _current_user: {
+                id: '1234',
+                email: 'test@example.com',
+                display_name: 'Laurie01',
+                first_name: 'Laurie',
+                last_name: 'Williams',
+                is_admin: true
+            },
+            // _current_user: null,
+            banner_img: [{
+                id: 1,
+                img_url: '/community/img/doorway.jpg'
+            }],
+            provenance: [{
+                id: 1,
+                provenance_url: '/community/img/tellus.png',
+                alt: 'Powered-by-Tellus'
+            }],
+            _metadata: {
+                root_url: 'http://127.0.0.1:8080',
+                page_path: '/home',
+                assets_path: '',
+                site_name: 'De Anza Oaks',
+                environment: 'dev',
+            },
+            community_news: [{
+                id: 1,
+                title: "WHAT'S NEW AT DE ANZA OAKS"
+            }],
+            shortcuts: [{
+                    title: 'New Announcements',
+                    num: '2',
+                    link: './news/announcements'
+                },
+                {
+                    title: 'Upcoming Events',
+                    num: '9',
+                    link: './activities/calendar'
+                },
+                {
+                    title: 'Recently Added Events',
+                    num: '7',
+                    link: './activities/calendar/list'
+                }
+            ],
+            feature_list: [{
+                    category: 'Activities',
+                    link: './activities',
+                    img: '/community/img/Events-b.png',
+                    active_img: '/community/img/Events-g.png'
+                },
+                {
+                    category: 'News',
+                    link: './news',
+                    img: '/community/img/News.png',
+                    active_img: '/community/img/News2.png'
+                },
+                {
+                    category: 'Resources',
+                    link: './resources',
+                    img: '/community/img/Resources.png',
+                    active_img: '/community/img/Resources2.png'
+                },
+                {
+                    category: 'Amenities',
+                    link: './amenities',
+                    img: '/community/img/Amenities_b.png',
+                    active_img: '/community/img/Amenities_g.png'
+                },
+                {
+                    category: 'City Resources',
+                    link: './city-resources',
+                    img: '/community/img/CityResources_b.png',
+                    active_img: '/community/img/CityResources_g.png'
+                }
+            ],
+            events: [{
+                    id: 1,
+                    friendly_date: 'February 10th, 2019',
+                    date: '2019-02-10',
+                    time: '20:20',
+                    creator: 'Tom',
+                    title: 'Clubhouse Booking (Confirmed) GS',
+                    location: 'De Anza Oaks',
+                    abbreviated_body: 'It’s sunny today, it’s bustling outside, the street is noisy',
+                    link: './activities/calendar',
+                },
+                {
+                    id: 2,
+                    friendly_date: 'February 21st, 2019',
+                    date: '2019-02-21',
+                    time: '22:20',
+                    creator: 'Laurie',
+                    title: 'Clubhouse Booking (Confirmed) GS',
+                    location: 'De Anza Oaks',
+                    abbreviated_body: 'It’s sunny today, it’s bustling outside, the street is noisy',
+                    link: './activities/calendar',
+                },
+                {
+                    id: 3,
+                    friendly_date: 'February 6th, 2019',
+                    date: '2019-02-06',
+                    time: '22:20',
+                    creator: 'Calvin',
+                    title: 'Clubhouse Booking (Confirmed) CC',
+                    location: 'De Anza Oaks',
+                    abbreviated_body: 'It’s sunny today, it’s bustling outside, the street is noisy',
+                    link: './activities/calendar',
+                },
+                {
+                    id: 4,
+                    friendly_date: 'February 28th, 2019',
+                    date: '2019-02-28',
+                    time: '22:20',
+                    creator: 'Fiona',
+                    title: 'Clubhouse Booking (Confirmed) CC',
+                    location: 'De Anza Oaks',
+                    abbreviated_body: 'It’s sunny today, it’s bustling outside, the street is noisy',
+                    link: './activities/calendar',
+                },
+                {
+                    id: 5,
+                    friendly_date: 'February 25th, 2019',
+                    date: '2019-02-25',
+                    time: '22:20',
+                    creator: 'Fiona',
+                    title: 'Clubhouse Booking (Confirmed) CC',
+                    location: 'De Anza Oaks',
+                    abbreviated_body: 'It’s sunny today, it’s bustling outside, the street is noisy',
+                    link: './activities/calendar',
+                },
+                {
+                    id: 6,
+                    friendly_date: 'March 20th, 2019',
+                    date: '2019-03-20',
+                    time: '22:20',
+                    creator: 'Fiona',
+                    title: 'Clubhouse Booking (Confirmed) CC',
+                    location: 'De Anza Oaks',
+                    abbreviated_body: 'It’s sunny today, it’s bustling outside, the street is noisy',
+                    link: './activities/calendar',
+                },
+                {
+                    id: 7,
+                    friendly_date: 'March 5th, 2019',
+                    date: '2019-03-05',
+                    time: '22:20',
+                    creator: 'Fiona',
+                    title: 'Clubhouse Booking (Confirmed) CC',
+                    location: 'De Anza Oaks',
+                    abbreviated_body: 'It’s sunny today, it’s bustling outside, the street is noisy',
+                    link: './activities/calendar',
+                },
+                {
+                    id: 8,
+                    friendly_date: 'March 5th, 2019',
+                    date: '2019-02-28',
+                    time: '22:20',
+                    location: "Playground",
+                    creator: 'Fiona',
+                    title: 'Clubhouse Booking (Confirmed) CC',
+                    location: 'De Anza Oaks',
+                    abbreviated_body: 'It’s sunny today, it’s bustling outside, the street is noisy',
+                    link: './activities/calendar',
+                },
+                {
+                    id: 9,
+                    friendly_date: 'March 5th, 2019',
+                    date: '2019-02-28',
+                    time: '22:20',
+                    location: "Playground",
+                    creator: 'Fiona',
+                    title: 'Clubhouse Booking (Confirmed) CC',
+                    location: 'De Anza Oaks',
+                    abbreviated_body: 'It’s sunny today, it’s bustling outside, the street is noisy',
+                    link: './activities/calendar',
+                },
+                {
+                    id: 10,
+                    friendly_date: 'March 5th, 2019',
+                    date: '2019-02-28',
+                    time: '22:20',
+                    location: "Playground",
+                    creator: 'Fiona',
+                    title: 'Clubhouse Booking (Confirmed) CC',
+                    location: 'De Anza Oaks',
+                    abbreviated_body: 'It’s sunny today, it’s bustling outside, the street is noisy',
+                    link: './activities/calendar',
+                },
+                {
+                    id: 11,
+                    friendly_date: 'March 5th, 2019',
+                    date: '2019-02-28',
+                    time: '22:20',
+                    location: "Playground",
+                    creator: 'Fiona',
+                    title: 'Clubhouse Booking (Confirmed) CC',
+                    location: 'De Anza Oaks',
+                    abbreviated_body: 'It’s sunny today, it’s bustling outside, the street is noisy',
+                    link: './activities/calendar',
+                }
+            ],
+            birds_eye_view: [{
+                img_url: '/community/img/dao5.png',
+                title: 'De Anza Oaks From The Air'
+            }],
+            amenities_title: [{
+                id: 1,
+                title: 'Amenities'
+            }],
+            amenities: [{
+                id: 1,
+                name: 'Gated Community',
+                reservable: false,
+                img_url: '/community/img/park.png'
+            }, {
+                id: 2,
+                name: 'Junior Olympic Pool',
+                reservable: false,
+                img_url: '/community/img/JuniorOlympicPool.png'
+            }, {
+                id: 3,
+                name: 'Clubhouse',
+                reservable: true,
+                reservation_link: './resources/eforms/reserve-the-clubhouse',
+                img_url: '/community/img/TheClubhouse.png'
+            }, {
+                id: 4,
+                name: 'Playground',
+                reservable: false,
+                img_url: '/community/img/Children’splayground.png'
+            }, {
+                id: 5,
+                name: 'Green Fields',
+                reservable: false,
+                img_url: '/community/img/Green-Fields.png'
+            }],
+            coordinates: {
+                latitude: '37.3201237',
+                longitude: '-122.0777671',
+            }
+        }
+
+    </script>
+
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+        // This script block stays in this wrapper html file
+        $(function() {
+            $('#content').load("body.html", function() {
+                render();
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!-- header -->
+<div class="header">
+</div>
+
+<!-- main body -->
+<div class="investor clearfix">
+    <div class="w1200">
+        <script id="breadcrumbs" type="txt/template">
+            <div class="main-breadcrumb" style="width: 1200px;margin: 0 auto">
+                    <ul class="breadcrumb" style="float: left">
+                        <li><a href="{{_metadata.root_url}}/home">Home</a></li>
+                        <li>&nbsp;>&nbsp;</li>
+                        <li><a href="{{_metadata.root_url}}/news">News</a></li>
+                        <li>&nbsp;>&nbsp;</li>
+                        <li><a href="{{_metadata.root_url}}/news/bulletins/">Email Bulletin</a></li>
+                        <li>&nbsp;>&nbsp;</li>
+                        <li><a href="#">Send a new eMail Bulletin</a></li>
+                    </ul>
+                </div>
+            </script>
+        <table class="table-two" border="0">
+            <tr>
+                <td>
+                    
+                        <div id="emails_title_cycle">
+                            <script id="emails_title" type="txt/template">
+                                {{name}}
+                                        </script>
+                        </div>
+                  
+                </td>
+            </tr>
+        </table>
+        <form method="post" enctype="multipart/form-data" action="" name="daForm">
+            <table class="content-table" border="1"cellspacing="0">
+                <tr>
+                    <td>
+                        From Name:
+                    </td>
+                    <td>
+
+                        <input class="int" type="text"size="10" maxlength="10" >
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        From eMail Address:
+                    </td>
+                    <td><input type="text" size="10" maxlength="10"></td>
+                </tr>
+                <tr>
+                    <td>
+                        To:
+                    </td>
+                    <td>
+                        <select size="1" name="sendTo" id="sendToSelect">
+                            <option selected="" value="none">(None)</option>
+                            <option value="maillist_category">eMail Bulletin Category</option>
+                            <option value="person_category">Address Book Category</option>
+                            <option value="subdivision">Subdivision</option>
+                            <option value="all">All</option>
+                            <option value="eform">eForm</option>
+                            <option value="survey">Survey</option>
+
+                            <option value="last_login">Last Login Date</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Users who have not logged in since this date: (mm/dd/yyyy)
+                    </td>
+                    <td>
+                        <input type="text" size="10" maxlength="10">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Subject:
+                    </td>
+                    <td>
+                        <input type="text" name="event_start_dt" size="10" maxlength="10">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Linked File:
+                    </td>
+                    <td>
+                        <input type="file" size="30" maxlength="200">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Full Description:
+                    </td>
+                    <td><textarea wrap="virtual" name="full_desc" cols="50" rows="5"></textarea></td>
+                </tr>
+            </table>
+            <table border="0" width="90%">
+                <tbody>
+                    <tr>
+                        <td width="10%" align="right">
+                            <input type="Submit" value="Submit" name="action" class="continue">
+                            <input type="button" id="cancel-button" value="Cancel" class="cancel">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+
+        </font>
+        </td>
+        </tr>
+        </tbody>
+        <div class="ad"></div>
+        </table>
+    </div>
+
+</div>
+
+<!-- footer -->
+<div class="footer" style="margin-top: 40px;">
+    <p>
+        Copyright © 2019 Tellus, Inc. All Rights Reserved.
+    </p>
+</div>

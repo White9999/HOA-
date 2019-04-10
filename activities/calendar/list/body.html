@@ -1,0 +1,54 @@
+<!-- header -->
+<div class="header"></div>
+<!-- main body -->
+<div class="main">
+    <div class="main-breadcrumb">
+        <script id="breadcrumbs" type="txt/template">
+            <div class="main-breadcrumb">
+                        <ul class="breadcrumb">
+                            <li><a href="{{_metadata.root_url}}/home">Home</a></li>
+                            <li>&nbsp;>&nbsp;</li>
+                            <li><a href="{{_metadata.root_url}}/activities">Activities</a></li>
+                            <li>&nbsp;>&nbsp;</li>
+                            <li><a href="{{_metadata.root_url}}/activities/calendar">Events Calendar</a></li>
+                            <li>&nbsp;>&nbsp;</li>
+                            <li><a href="#">Recently Added Events</a></li>
+                        </ul>
+                    </div>
+                </script>
+    </div>
+    <div class="main-center">
+        <p>Recently Added Events</p>
+        <div class="content-1">
+            <table style="border:1" id="calendar_events">
+                <tr id="list_category_cycle">
+                    <td>Posted At</td>
+                    <td>Date</td>
+                    <td>Description</td>
+                    <td>Creator</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td>Maybe</td>
+                </tr>
+                <script id="event_template" type="txt/template">
+                    <tr class="details" data-id="{{id}}" data-event-type="{{event_type}}">
+                        <td>{{created_at}}</td>
+                        <td>{{friendly_date}}</td>
+                        <td>{{title}}</td>
+                        <td>{{creator}}</td>
+                        <td>{{yes}}</td>
+                        <td>{{no}}</td>
+                        <td>{{maybe}}</td>
+                    </tr>
+                </script>
+            </table>
+        </div>
+
+    </div>
+</div>
+<!-- footer -->
+<div class="footer">
+    <p>
+        Copyright © 2019 Tellus, Inc. All Rights Reserved.
+    </p>
+</div>

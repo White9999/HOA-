@@ -1,0 +1,62 @@
+<!-- header -->
+<div class="header">
+</div>
+
+<!-- main body -->
+<div class="main">
+    <div class="w1200 pr">
+        <script id="breadcrumbs" type="txt/template">
+            <div class="main-breadcrumb">
+                        <ul class="breadcrumb">
+                            <li><a href="{{_metadata.root_url}}/home">Home</a></li>
+                            <li>&nbsp;>&nbsp;</li>
+                            <li><a href="{{_metadata.root_url}}/resources">Resources</a></li>
+                            <li>&nbsp;>&nbsp;</li>
+                            <li><a href="#">Board/Committee</a></li>
+                        </ul>
+                    </div>
+                    </script>
+        <h4 id="TheTitleExternal">
+            Board / Committee
+            <div class="content-1">
+                A complete listing of Board Members, Committee Chairs and Association Management
+            </div>
+        </h4>
+        <script id="links" type="txt/template">
+            <a class="committee_add" id="AddbuttonExternal" href="{{_metadata.root_url}}{{_metadata.page_path}}/add">
+                Add
+            </a>
+        </script>
+        <div class="tiles">
+            <script id="committee_tiles" type="txt/template">
+                {{#committees}}
+                <a href="{{_metadata.root_url}}{{_metadata.page_path}}/show?committee_id={{id}}">
+                    <div>
+                        <div class="item">
+                            <div class="committee_title">
+                                {{title}}
+                            </div>
+                            <div class="committee_details">
+                                <div>Updated: {{updated}}</div>
+                                <div class="tiles_content">{{content}}</div>
+                            </div>
+                            <div class="committee_details">
+                                {{#from}}<div>{{from}}</div>{{/from}}
+                                {{#telephone}}<div>{{telephone}}</div>{{/telephone}}
+                                {{#email}}<div>{{email}}</div>{{/email}}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                {{/committees}}
+            </script>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<div class="footer">
+    <p>
+        Copyright © 2019 Tellus, Inc. All Rights Reserved.
+    </p>
+</div>
